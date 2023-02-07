@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-one
+  labels:
+    cluster: cluster-1
+    owner: platform-team
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  labels:
+    owner: platform-team
+  name: hard-limit
+  namespace: app-one
+spec:
+  hard:
+    cpu: "20"
+    memory: 2Gi
+    pods: "50"
