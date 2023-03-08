@@ -10,8 +10,26 @@ spec:
       - ""
       kinds:
       - Pod
-    namespaces:
-    - app-one
+    excludedNamespaces:
+      - kube-system
+      - kube-node-lease
+      - kube-public
+      - gatekeeper-system
+      - config-management-system
+      - config-management-monitoring
+      - resource-group-system
+      - gke-connect
+      - istio-system
+      - asm-system
+      - default
+      - capi-system
+      - vm-system
+      - gke-managed-metrics-server
+      - cert-manager
+      - anthos-creds
+      - capi-kubeadm-bootstrap-system
+      - gke-system
+      - anthos-identity-service
   parameters:
     exemptImages:
     - openpolicyagent/opa-exp:latest
